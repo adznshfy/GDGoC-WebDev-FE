@@ -212,6 +212,20 @@ footer {
   opacity: 0;
 }
 
+#quote-box {
+  font-style: italic;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#quote-box.show {
+  opacity: 1;
+}
+
+
 @keyframes fadeIn {
   to {
     opacity: 1;

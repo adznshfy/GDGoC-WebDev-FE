@@ -107,19 +107,27 @@
     }
   });
 
-  function loadQuote() {
-    fetch('https://api.quotable.io/random')
-      .then(res => res.json())
-      .then(data => {
-        const quoteBox = document.getElementById("quote-box");
+  const quoteBox = document.getElementById("quote-box");
+
+  async function loadQuote() {
+    try {
+      const res = await fetch('https://api.quotable.io/random');
+      const data = await res.json();
+      quoteBox.classList.remove('show');
+      setTimeout(() => {
         quoteBox.innerText = `"${data.content}" — ${data.author}`;
-      })
-      .catch(() => {
-        document.getElementById("quote-box").innerText = "“Stay curious and keep learning.”";
-      });
+        quoteBox.classList.add('show');
+      }, 300);
+    } catch {
+      quoteBox.innerText = "“Stay curious and keep learning.”";
+      quoteBox.classList.add('show');
+    }
   }
+
   loadQuote();
+  setInterval(loadQuote, 10000); // every 10 seconds
 </script>
+
 
 </body>
 </html>
