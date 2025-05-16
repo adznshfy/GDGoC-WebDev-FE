@@ -203,6 +203,22 @@ footer {
   color: #666;
 }
 
+.quote {
+  font-style: italic;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 1rem;
+  animation: fadeIn 1.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+
 section {
   opacity: 0;
   transform: translateY(50px);
