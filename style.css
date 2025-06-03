@@ -2,83 +2,133 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background: #fff;
-  color: #222;
+  background: #f0f2f5; /* Background lebih terang */
+  color: #333; /* Warna teks lebih gelap */
+  line-height: 1.6;
+}
+
+/* Global Styles for sections */
+section, .edu-exp-container, .project-swiper, .skill-container { /* Ganti .project-container ke .project-swiper */
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); /* Shadow yang lebih halus */
+  margin-bottom: 40px;
+  padding: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover, .edu-exp-container:hover, .project-swiper:hover, .skill-container:hover { /* Ganti .project-container ke .project-swiper */
+  transform: translateY(-5px); /* Efek hover lift */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+h2, h3 {
+  font-weight: 700;
+  color: #2c3e50; /* Warna heading yang lebih kuat */
 }
 
 /* About Section */
 .about {
-  padding: 60px 20px 100px;
-  padding-bottom: 150px;
+  padding: 80px 20px 120px; /* Padding lebih besar */
   text-align: center;
-  background-color: #fff;
+  background-color: #f7f9fc; /* Background sedikit berbeda untuk bagian about */
+  border-bottom-left-radius: 30px; /* Bentuk sudut yang lebih menarik */
+  border-bottom-right-radius: 30px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
 }
 
 .about h2 {
-  font-size: 2.5rem;
-  margin-bottom: 40px;
-  font-weight: bold;
+  font-size: 3rem; /* Ukuran font lebih besar */
+  margin-bottom: 50px;
+  position: relative;
+  display: inline-block;
+}
+
+.about h2::after {
+  content: '';
+  position: absolute;
+  width: 70px;
+  height: 4px;
+  background-color: #6c5ce7; /* Warna ungu sebagai aksen */
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
 }
 
 .about-content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 800px;
+  max-width: 900px; /* Lebar maksimum lebih besar */
   margin: auto;
+  gap: 40px; /* Jarak antar elemen */
 }
 
 .profile-pic {
-  width: 180px;
-  height: 240px; /* Biar lebih panjang */
+  width: 200px; /* Ukuran foto lebih besar */
+  height: 260px;
   object-fit: cover;
-  border-radius: 15px;
-  margin-bottom: 20px;
+  border-radius: 20px; /* Border radius lebih besar */
+  border: 5px solid #fff; /* Border putih */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05) rotate(2deg); /* Efek hover yang lebih dinamis */
 }
 
 .about-text h3 {
-  font-size: 1.4rem;
+  font-size: 1.8rem; /* Ukuran nama lebih besar */
   font-weight: 700;
-  margin-bottom: 10px;
+  color: #4a4a4a;
+  margin-bottom: 15px;
 }
 
 .about-text p {
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.6;
-  max-width: 600px;
+  font-size: 1.05rem; /* Ukuran paragraf sedikit lebih besar */
+  color: #555;
+  line-height: 1.8;
+  max-width: 700px;
   margin: auto;
 }
 
 .social-icons {
-  margin-top: 20px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 25px; /* Jarak antar ikon */
 }
 
 .social-icons a img {
-  width: 40px;
-  height: 40px;
-  margin: 0 10px;
-  transition: transform 0.3s ease;
+  width: 45px; /* Ukuran ikon lebih besar */
+  height: 45px;
+  filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.1)); /* Efek shadow pada ikon */
 }
 
 .social-icons a img:hover {
-  transform: scale(1.2);
+  transform: translateY(-5px) scale(1.1); /* Efek lift dan scale */
 }
 
-
 .scroll-text {
-  margin-top: 150px;
-  font-size: 0.95rem;
-  color: #888;
+  margin-top: 100px; /* Penyesuaian margin */
+  font-size: 1rem;
+  color: #999;
   text-align: center;
   opacity: 1;
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
-.scroll-text.hide {
-  opacity: 0;
-  transform: translateY(20px);
-  pointer-events: none;
+.scroll-text a {
+  color: #6c5ce7; /* Warna link lebih menonjol */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.scroll-text a:hover {
+  color: #5e4bd8;
 }
 
 html {
@@ -89,7 +139,7 @@ html {
   .about-content {
     flex-direction: row;
     text-align: left;
-    gap: 30px;
+    gap: 50px;
   }
 
   .about-text {
@@ -102,123 +152,294 @@ html {
 }
 
 
+/* Education and Experience */
 .edu-exp-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 30px;
-  background-color: #ffffff;
-  border-radius: 16px;
+  gap: 50px; /* Jarak antar kolom lebih besar */
+  max-width: 950px;
+  margin: 60px auto;
+  padding: 50px;
+  background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%); /* Gradient background */
 }
 
 .edu-exp-container h3 {
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #3f51b5; /* Warna biru untuk heading */
 }
 
 .edu-exp-container ul {
-  padding-left: 20px;
+  padding-left: 25px;
+  list-style: none; /* Hilangkan bullet default */
+}
+
+.edu-exp-container ul li {
+  position: relative;
+  margin-bottom: 15px;
+  font-size: 1.05rem;
+  color: #444;
+}
+
+.edu-exp-container ul li::before {
+  content: '•'; /* Bullet kustom */
+  position: absolute;
+  left: -20px;
+  color: #6c5ce7; /* Warna bullet */
+  font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {
   .edu-exp-container {
     grid-template-columns: 1fr;
-    text-align: center;
+    text-align: left; /* Sesuaikan agar tidak center */
+    padding: 30px;
+  }
+  .edu-exp-container ul {
+    padding-left: 40px; /* Sesuaikan padding agar bullet tetap terlihat */
   }
 }
 
 
+/* Projects Section */
 .project-title {
   text-align: center;
-  margin: 40px 0 20px;
+  margin: 80px 0 30px; /* Margin lebih besar */
   font-weight: bold;
-  font-size: 1.8rem;
+  font-size: 2.5rem;
+  color: #2c3e50;
+  position: relative;
+  display: inline-block;
+  width: 100%; /* Agar after content bisa di tengah */
 }
 
-.project-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  padding: 0 40px;
-  max-width: 1000px;
-  margin: 0 auto 60px;
+.project-title::after {
+  content: '';
+  position: absolute;
+  width: 90px;
+  height: 4px;
+  background-color: #e74c3c; /* Warna merah sebagai aksen */
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
 }
 
-.project-container img {
+/* Swiper Container for projects */
+.project-swiper { /* Nama class baru untuk container Swiper */
+  max-width: 1100px; /* Sesuaikan dengan lebar maksimum carousel Anda */
+  margin: 0 auto 80px; /* Sesuaikan margin bawah */
+  padding: 0 30px; /* Beri padding agar tombol navigasi tidak terlalu mepet */
+  position: relative; /* Penting untuk posisi tombol dan pagination */
+  border-radius: 15px; /* Sama seperti section lain */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Penting untuk Swiper, agar konten di luar slide tidak terlihat */
+}
+
+.project-swiper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.project-swiper .swiper-slide {
+  text-align: center;
+  background: #fff;
+  display: flex;
+  flex-direction: column; /* Mengatur layout vertikal untuk gambar dan deskripsi */
+  justify-content: flex-start; /* Gambar di atas, deskripsi di bawah */
+  align-items: center;
+  border-radius: 10px; /* Radius untuk setiap slide */
+  overflow: hidden; /* Penting agar gambar tidak keluar dari border-radius */
+  padding-bottom: 15px; /* Ruang untuk deskripsi di bawah */
+}
+
+.project-swiper .swiper-slide a {
+  display: block; /* Agar link bisa menempati seluruh area gambar */
   width: 100%;
-  height: auto;
-  border-radius: 12px;
+  height: 250px; /* Tinggi gambar agar seragam */
+  overflow: hidden; /* Untuk memastikan border-radius bekerja pada gambar */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+
+.project-swiper .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%; /* Gambar mengisi seluruh area link */
   object-fit: cover;
-  transition: transform 0.3s ease;
+  /* border-radius: 10px; Dihapus karena sudah ada di parent <a> dan .swiper-slide */
+  transition: transform 0.3s ease; /* Efek hover pada gambar */
 }
 
-.project-container img:hover {
-  transform: scale(1.03);
+.project-swiper .swiper-slide a:hover img {
+  transform: scale(1.08); /* Sedikit zoom saat hover pada link gambar */
 }
 
-@media (max-width: 768px) {
-  .project-container {
-    grid-template-columns: repeat(2, 1fr);
+.project-description {
+  padding: 10px 15px;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box; /* Pastikan padding tidak menambah lebar */
+}
+
+.project-description h4 {
+  font-size: 1.1rem;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  color: #4a4a4a;
+}
+
+.project-description p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.4;
+}
+
+
+/* Styling untuk tombol navigasi (panah) */
+.project-swiper .swiper-button-next,
+.project-swiper .swiper-button-prev {
+  color: #6c5ce7; /* Warna panah */
+  width: 45px; /* Ukuran tombol */
+  height: 45px;
+  border-radius: 50%; /* Bentuk bulat */
+  background-color: rgba(255, 255, 255, 0.9); /* Background transparan */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  transition: background-color 0.3s ease, transform 0.3s ease, color 0.3s ease;
+  top: 40%; /* Posisikan tombol di tengah-tengah slide gambar */
+}
+
+.project-swiper .swiper-button-next::after,
+.project-swiper .swiper-button-prev::after {
+  font-size: 1.5rem; /* Ukuran ikon panah */
+}
+
+.project-swiper .swiper-button-next:hover,
+.project-swiper .swiper-button-prev:hover {
+  background-color: #6c5ce7;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Styling untuk pagination (titik-titik di bawah) */
+.project-swiper .swiper-pagination {
+  bottom: 20px !important; /* Posisikan pagination lebih ke bawah */
+}
+
+.project-swiper .swiper-pagination-bullet {
+  background-color: #ccc; /* Warna titik tidak aktif */
+  opacity: 1;
+  transition: background-color 0.3s ease;
+}
+
+.project-swiper .swiper-pagination-bullet-active {
+  background-color: #6c5ce7; /* Warna titik aktif */
+}
+
+/* Media query untuk menyembunyikan tombol navigasi di layar sangat kecil jika diinginkan */
+@media (max-width: 640px) { /* Sesuaikan breakpoint untuk sembunyikan panah */
+  .project-swiper .swiper-button-next,
+  .project-swiper .swiper-button-prev {
+    display: none; /* Sembunyikan tombol panah di layar sangat kecil */
   }
 }
 
-@media (max-width: 480px) {
-  .project-container {
-    grid-template-columns: 1fr;
-  }
-}
 
+/* Skills Section */
 .section-title {
   text-align: center;
-  font-size: 1.6rem;
+  font-size: 2.2rem;
   font-weight: bold;
-  margin-top: 60px;
-  margin-bottom: 20px;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  color: #2c3e50;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 4px;
+  background-color: #2ecc71; /* Warna hijau sebagai aksen */
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
 }
 
 .skill-container {
   display: flex;
   justify-content: center;
-  gap: 40px;
-  margin-bottom: 40px;
+  gap: 50px; /* Jarak antar logo lebih besar */
+  margin-bottom: 80px; /* Margin lebih besar */
   flex-wrap: wrap;
+  padding: 50px;
+  max-width: 800px;
+  margin: 0 auto 80px;
 }
 
 .skill-logo {
-  width: 80px;
+  width: 100px; /* Ukuran logo lebih besar */
   height: auto;
-  transition: transform 0.3s ease;
+  filter: grayscale(80%); /* Efek grayscale */
+  transition: transform 0.4s ease, filter 0.4s ease;
 }
 
 .skill-logo:hover {
-  transform: scale(1.1);
+  transform: scale(1.2) translateY(-5px); /* Efek scale dan lift */
+  filter: grayscale(0%); /* Warna asli saat hover */
 }
 
+/* Footer */
 footer {
   text-align: center;
-  padding: 2rem;
-  font-size: 0.9rem;
-  color: #666;
+  padding: 3rem; /* Padding lebih besar */
+  font-size: 1rem;
+  color: #777;
+  background-color: #e9ebee; /* Background footer */
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.05);
+}
+
+footer p {
+  margin-bottom: 10px;
+}
+
+footer a {
+  color: #6c5ce7;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #5e4bd8;
+  text-decoration: underline;
 }
 
 .quote {
   font-style: italic;
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 1rem;
-  animation: fadeIn 1.5s ease forwards;
-  opacity: 0;
-}
-
-#quote-box {
-  font-style: italic;
-  font-size: 1rem;
+  font-size: 1.1rem; /* Ukuran quote lebih besar */
   color: #555;
   margin-bottom: 1.5rem;
   opacity: 0;
   transition: opacity 0.5s ease;
+}
+
+#quote-box {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 2rem; /* Margin lebih besar */
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out; /* Transisi lebih halus */
 }
 
 #quote-box.show {
@@ -226,29 +447,72 @@ footer {
 }
 
 
+/* Animations */
 @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
   to {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
-
-section {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.6s ease;
+/* Sesuaikan ini untuk AOS */
+section[data-aos], .edu-exp-container[data-aos], .project-swiper[data-aos], .skill-container[data-aos] {
+  opacity: 0; /* Pastikan semua elemen yang di-AOS dimulai dengan opacity 0 */
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Transisi AOS yang lebih halus */
 }
 
-section.visible {
+section[data-aos].aos-animate, .edu-exp-container[data-aos].aos-animate, .project-swiper[data-aos].aos-animate, .skill-container[data-aos].aos-animate {
   opacity: 1;
   transform: translateY(0);
 }
 
-@media (max-width: 768px) {
-  footer {
-    padding: 1.5rem;
-    font-size: 0.85rem;
-  }
+.scroll-text.hide {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
 }
 
+/* Featherlight specific overrides for better styling */
+.featherlight-content {
+    background: rgba(255,255,255,0.95); /* Background lightbox lebih terang */
+    border-radius: 15px; /* Sudut membulat */
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
 
+.featherlight-content img {
+    max-width: 90vw; /* Lebar maksimal gambar di lightbox */
+    max-height: 80vh; /* Tinggi maksimal gambar di lightbox */
+    border-radius: 10px; /* Sudut membulat untuk gambar di lightbox */
+    object-fit: contain; /* Memastikan gambar tidak terpotong */
+}
+
+.featherlight-close-icon {
+    font-size: 2.5rem; /* Ukuran ikon close */
+    color: #e74c3c; /* Warna ikon close */
+    background: none;
+    border: none;
+    top: -15px;
+    right: -15px;
+    padding: 0;
+    line-height: 1;
+    transition: color 0.2s ease;
+}
+
+.featherlight-close-icon:hover {
+    color: #c0392b;
+}
+
+.featherlight-caption {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #333;
+    margin-top: 15px;
+    line-height: 1.5;
+    font-style: normal; /* Pastikan caption tidak italic */
+}

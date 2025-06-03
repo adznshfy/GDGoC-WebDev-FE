@@ -9,6 +9,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+
 </head>
 <body>
 
@@ -19,9 +23,9 @@
     <div class="about-text">
       <h3>JIHAAN ADZANISHAAFIYA ANWAR</h3>
       <p>
-        An undergraduate student majoring in Information Systems at UIN Jakarta, has a high interest and curiosity in the field of information and technology. 
-        Have an experience in organizations and can develop the abilities in communication, time management and responsibility. 
-        Likes to try new things to develop a knowledge, skills and experience. 
+        An undergraduate student majoring in Information Systems at UIN Jakarta, has a high interest and curiosity in the field of information and technology.
+        Have an experience in organizations and can develop the abilities in communication, time management and responsibility.
+        Likes to try new things to develop a knowledge, skills and experience.
         Have a good personality, enjoy communicating with other people and can be responsible.
       </p>
       <div class="social-icons">
@@ -60,13 +64,66 @@
 </div>
 
 <h3 class="project-title">Projects</h3>
-<div class="project-container" data-aos="fade-right">
-  <img src="upload/project1.png" alt="Project 1">
-  <img src="upload/project2.png" alt="Project 2">
-  <img src="upload/project5.jpg" alt="Project 3">
-  <img src="upload/project4.png" alt="Project 4">
-  <img src="upload/project3.jpg" alt="Project 5">
-  <img src="upload/project6.jpg" alt="Project 6">
+<div class="swiper-container project-swiper" data-aos="fade-right">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <a href="upload/project1.png" data-featherlight="image" title="Project 1 Description">
+        <img src="upload/project1.png" alt="Project 1">
+      </a>
+      <div class="project-description">
+        <h4>Project 1: Training Camp Design</h4>
+        <p>A design for a training camp event.</p>
+        </div>
+    </div>
+    <div class="swiper-slide">
+      <a href="upload/project2.png" data-featherlight="image" title="Project 2 Description">
+        <img src="upload/project2.png" alt="Project 2">
+      </a>
+      <div class="project-description">
+        <h4>Project 2: D-2 Event Poster</h4>
+        <p>Promotional poster for an event.</p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <a href="upload/project5.jpg" data-featherlight="image" title="Project 3 Description">
+        <img src="upload/project5.jpg" alt="Project 3">
+      </a>
+      <div class="project-description">
+        <h4>Project 3: Eid Al-Fitr Greeting Card</h4>
+        <p>Personalized greeting card design.</p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <a href="upload/project4.png" data-featherlight="image" title="Project 4 Description">
+        <img src="upload/project4.png" alt="Project 4">
+      </a>
+      <div class="project-description">
+        <h4>Project 4: Mobile App UI Concept</h4>
+        <p>User interface design for a mobile application.</p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <a href="upload/project3.jpg" data-featherlight="image" title="Project 5 Description">
+        <img src="upload/project3.jpg" alt="Project 5">
+      </a>
+      <div class="project-description">
+        <h4>Project 5: Abstract Graphic Design</h4>
+        <p>Creative abstract art piece.</p>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <a href="upload/project6.jpg" data-featherlight="image" title="Project 6 Description">
+        <img src="upload/project6.jpg" alt="Project 6">
+      </a>
+      <div class="project-description">
+        <h4>Project 6: Wind Turbine Concept Art</h4>
+        <p>Conceptual design for renewable energy.</p>
+      </div>
+    </div>
+  </div>
+  <div class="swiper-pagination"></div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
 </div>
 
 
@@ -83,6 +140,9 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/featherlight@1.7.14/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
   <script src="script.js"></script>
 
 
